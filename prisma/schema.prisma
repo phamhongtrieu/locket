@@ -1,0 +1,66 @@
+datasource db {
+  provider = "sqlite"
+  url      = env("DATABASE_URL")
+}
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+model User {
+  id           Int           @id @default(autoincrement())
+  email        String        @unique
+  passwordHash String
+  balance      Float         @default(0.0)
+  role         String        @default("USER") // "USER" or "ADMIN"
+  createdAt    DateTime      @default(now())
+  updatedAt    DateTime      @updatedAt
+  transactions Transaction[]
+  orders       Order[]
+
+  @@map("users")
+}
+
+model Transaction {
+  id            Int      @id @default(autoincrement())
+  userId        Int
+  user          User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  amount        Float
+  type          String   // "DEPOSIT", "PURCHASE", "REFUND"
+  referenceCode String?  // Bank tran ID or order code
+  status        String   @default("SUCCESS") // "PENDING", "SUCCESS", "FAILED"
+  description   String?
+  createdAt     DateTime @default(now())
+
+  @@map("transactions")
+}
+
+model Order {
+  id             Int      @id @default(autoincrement())
+  orderCode      String   @unique
+  userId         Int
+  user           User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  packageName    String
+  targetUsername String   // Username Locket
+  price          Float
+  status         String   @default("PENDING") // "PENDING", "PROCESSING", "COMPLETED", "FAILED"
+  note           String?
+  createdAt      DateTime @default(now())
+  updatedAt      DateTime @updatedAt
+
+  @@map("orders")
+}
+
+model Package {
+  id            Int      @id @default(autoincrement())
+  name          String
+  duration      String   // e.g. "1 Tháng", "1 Năm", "Vĩnh Viễn"
+  price         Float
+  originalPrice Float?
+  description   String?
+  isBestSeller  Boolean  @default(false)
+  active        Boolean  @default(true)
+  createdAt     DateTime @default(now())
+
+  @@map("packages")
+}

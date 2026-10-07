@@ -1,0 +1,433 @@
+<!DOCTYPE html>
+<html lang="vi" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>LocketGold Tự Động - Nâng Cấp Locket Gold Giá Rẻ</title>
+  
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  
+  <!-- Google Fonts: Plus Jakarta Sans -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  
+  <!-- FontAwesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="/css/custom.css">
+</head>
+<body class="min-h-screen bg-[#f8fafc] text-slate-800 relative overflow-x-hidden font-sans">
+  
+  <!-- Lớp loang màu Pastel nền (Background Glow) -->
+  <div class="fixed inset-0 pointer-events-none -z-10 overflow-hidden">
+    <!-- Vệt sáng hồng phấn -->
+    <div class="absolute -top-40 -left-40 w-96 h-96 bg-pink-200/50 rounded-full blur-3xl"></div>
+    <!-- Vệt sáng tím lavender -->
+    <div class="absolute top-20 right-10 w-[500px] h-[500px] bg-purple-200/40 rounded-full blur-3xl"></div>
+    <!-- Vệt sáng xanh ngọc pastel -->
+    <div class="absolute top-[400px] left-1/3 w-80 h-80 bg-blue-100/60 rounded-full blur-3xl"></div>
+  </div>
+
+  <!-- Header / Navigation Bar -->
+  <header class="sticky top-0 z-50 bg-white/80 backdrop-blur-md border-b border-slate-200/80 shadow-sm">
+    <div class="max-w-6xl mx-auto px-4">
+      <div class="flex items-center justify-between h-20">
+        
+        <!-- Logo -->
+        <a href="/" class="flex items-center gap-3 group">
+          <div class="w-11 h-11 rounded-2xl bg-gradient-to-tr from-blue-600 to-purple-600 text-white flex items-center justify-center shadow-md shadow-blue-500/20 group-hover:scale-105 transition-transform duration-300">
+            <i class="fa-solid fa-crown text-xl"></i>
+          </div>
+          <div class="flex flex-col">
+            <span class="font-black text-xl tracking-tight text-slate-900 leading-none">
+              Locket<span class="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-purple-600">Gold</span>
+            </span>
+            <span class="text-[10px] text-indigo-600 font-bold tracking-widest uppercase mt-0.5">Automated System</span>
+          </div>
+        </a>
+
+        <!-- Desktop Navigation Links -->
+        <nav class="hidden md:flex items-center gap-8 font-semibold text-sm text-slate-600">
+          <a href="#quick-order" class="hover:text-blue-600 transition-colors">Mua Hàng Nhanh</a>
+          <a href="#features" class="hover:text-blue-600 transition-colors">Đặc Quyền SVIP</a>
+          <a href="#pricing" class="hover:text-blue-600 transition-colors">Bảng Giá</a>
+          <a href="#guide" class="hover:text-blue-600 transition-colors">Hướng Dẫn</a>
+        </nav>
+
+        <!-- Auth Action Buttons -->
+        <div class="flex items-center gap-3" id="nav-auth-area">
+          <a href="/login.html" class="px-5 py-2.5 rounded-xl font-bold text-sm text-slate-700 hover:text-blue-600 hover:bg-slate-100/80 transition-all">
+            <i class="fa-solid fa-right-to-bracket mr-1"></i> Đăng Nhập
+          </a>
+          <a href="/register.html" class="px-5 py-2.5 rounded-xl bg-gradient-to-r from-blue-600 via-indigo-600 to-purple-600 text-white font-extrabold text-sm shadow-md shadow-indigo-500/20 hover:shadow-lg hover:shadow-indigo-500/30 transition-all transform hover:-translate-y-0.5">
+            <i class="fa-solid fa-user-plus mr-1"></i> Đăng Ký
+          </a>
+        </div>
+
+      </div>
+    </div>
+  </header>
+
+  <!-- Khung nội dung chính & Hero Section -->
+  <main class="max-w-6xl mx-auto px-4 py-10 md:py-16">
+    
+    <!-- Tiêu đề chính -->
+    <div class="max-w-3xl mb-10">
+      <h1 class="text-4xl md:text-5xl font-black text-slate-900 tracking-tight leading-tight">
+        Hệ Thống Nâng Cấp <br>
+        <span class="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 via-indigo-600 to-purple-600">
+          LocketGold Tự Động
+        </span>
+      </h1>
+      
+      <!-- Card mô tả bo tròn kính mờ nhẹ -->
+      <div class="mt-6 p-6 rounded-2xl bg-white/70 backdrop-blur-md border border-white/80 shadow-sm">
+        <p class="text-sm text-slate-600 leading-relaxed">
+          Nền tảng tự động nâng cấp Locket Gold chỉ cần username là đủ lên gold. Tuyệt đối bảo vệ quyền riêng tư với cam kết <b>100% quy tắc 3 KHÔNG:</b>
+        </p>
+        
+        <ul class="mt-4 space-y-2.5 text-sm text-slate-700">
+          <li class="flex items-center gap-2">
+            <span class="text-red-500 font-bold">✕</span>
+            <span><b class="text-red-500">KHÔNG</b> yêu cầu đăng nhập iCloud hay can thiệp thiết bị.</span>
+          </li>
+          <li class="flex items-center gap-2">
+            <span class="text-red-500 font-bold">✕</span>
+            <span><b class="text-red-500">KHÔNG</b> cần cung cấp mật khẩu Locket của bạn.</span>
+          </li>
+          <li class="flex items-center gap-2">
+            <span class="text-red-500 font-bold">✕</span>
+            <span><b class="text-red-500">KHÔNG</b> yêu cầu tải Shadowrocket / DNS phức tạp.</span>
+          </li>
+        </ul>
+        
+        <!-- Badge xanh hỗ trợ -->
+        <div class="mt-5 inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-emerald-50 border border-emerald-200/60 text-emerald-700 text-xs font-semibold">
+          <span>⏱</span> Hệ thống hỗ trợ: iOS (iPhone / iPad)
+        </div>
+      </div>
+    </div>
+
+    <!-- Bảng số liệu thống kê (Stats) bên dưới -->
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mb-16">
+      <div class="bg-white/80 backdrop-blur-sm border border-slate-100 p-5 rounded-2xl shadow-sm text-center">
+        <div class="text-2xl md:text-3xl font-black text-slate-900">35,439</div>
+        <div class="text-xs font-bold text-slate-500 mt-1">👤 THÀNH VIÊN</div>
+      </div>
+      <div class="bg-white/80 backdrop-blur-sm border border-slate-100 p-5 rounded-2xl shadow-sm text-center">
+        <div class="text-2xl md:text-3xl font-black text-indigo-600">2,957</div>
+        <div class="text-xs font-bold text-slate-500 mt-1">📈 LƯỢT SỬ DỤNG</div>
+      </div>
+      <div class="bg-white/80 backdrop-blur-sm border border-slate-100 p-5 rounded-2xl shadow-sm text-center">
+        <div class="text-2xl md:text-3xl font-black text-amber-500">100%</div>
+        <div class="text-xs font-bold text-slate-500 mt-1">⭐ BẢO HÀNH FULL</div>
+      </div>
+      <div class="bg-white/80 backdrop-blur-sm border border-slate-100 p-5 rounded-2xl shadow-sm text-center">
+        <div class="text-2xl md:text-3xl font-black text-emerald-600">24/7</div>
+        <div class="text-xs font-bold text-slate-500 mt-1">⚡ DUYỆT TỰ ĐỘNG</div>
+      </div>
+    </div>
+
+    <!-- Form Mua Hàng Nhanh (Chỉ gói 1 Năm - iOS) -->
+    <section id="quick-order" class="mb-20">
+      <div class="max-w-2xl mx-auto bg-white/80 backdrop-blur-md border border-white/90 rounded-2xl p-6 md:p-8 shadow-xl shadow-indigo-500/5 relative overflow-hidden">
+        
+        <!-- Icon & Tiêu đề -->
+        <div class="text-center mb-8">
+          <div class="inline-flex items-center justify-center w-12 h-12 rounded-xl bg-amber-50 text-amber-600 mb-3 border border-amber-200/60 font-bold text-xl">
+            ⚡
+          </div>
+          <h2 class="text-2xl md:text-3xl font-black text-slate-900">Form Mua Hàng Nhanh</h2>
+          <p class="text-slate-500 text-sm mt-1">Điền Username Locket để khởi tạo đơn hàng ngay</p>
+        </div>
+
+        <form id="orderForm" onsubmit="handleOrderFormSubmit(event)" class="space-y-6">
+          <!-- 1. CHỌN GÓI DỊCH VỤ -->
+          <div>
+            <label class="block text-xs font-extrabold tracking-wider text-indigo-600 uppercase mb-3">
+              1. GÓI DỊCH VỤ ĐANG CHỌN
+            </label>
+            
+            <!-- Card Gói 1 Năm Duy Nhất -->
+            <div class="relative bg-gradient-to-r from-blue-50/80 via-indigo-50/50 to-white border-2 border-indigo-500 rounded-xl p-5 cursor-pointer shadow-md shadow-indigo-500/5">
+              <!-- Badge iOS & Bán chạy -->
+              <div class="absolute -top-3 right-4 flex gap-2">
+                <span class="bg-slate-800 text-white text-[11px] font-bold px-2.5 py-0.5 rounded-full flex items-center gap-1 shadow-sm">
+                   Chỉ hỗ trợ iOS
+                </span>
+                <span class="bg-gradient-to-r from-amber-400 to-amber-500 text-black text-[11px] font-black px-2.5 py-0.5 rounded-full uppercase shadow-sm">
+                  Ưu Đãi
+                </span>
+              </div>
+
+              <div class="flex items-center justify-between mt-1">
+                <div>
+                  <h3 class="text-lg font-black text-slate-900 flex items-center gap-2">
+                    Locket Gold 1 Năm
+                  </h3>
+                  <p class="text-xs text-slate-500 mt-0.5">Sử dụng trọn vẹn 12 tháng • Bảo hành full</p>
+                </div>
+                <div class="text-right">
+                  <span class="text-2xl font-black text-indigo-600">100.000 VNĐ</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- 2. NHẬP USERNAME -->
+          <div>
+            <label class="block text-xs font-extrabold tracking-wider text-indigo-600 uppercase mb-2">
+              2. NHẬP USERNAME LOCKET CỦA BẠN
+            </label>
+            <div class="relative">
+              <span class="absolute inset-y-0 left-0 flex items-center pl-4 text-indigo-600 font-black text-lg">
+                @
+              </span>
+              <input 
+                type="text" 
+                id="locket_username"
+                name="locket_username"
+                placeholder="username_locket_cua_ban" 
+                class="w-full bg-slate-50/80 border border-slate-200 rounded-xl py-3.5 pl-11 pr-4 text-slate-900 font-bold placeholder-slate-400 focus:outline-none focus:border-indigo-500 focus:bg-white focus:ring-2 focus:ring-indigo-500/20 transition-all"
+                required
+              >
+            </div>
+            
+            <!-- Hướng dẫn & Cảnh báo iOS -->
+            <div class="mt-2.5 space-y-1">
+              <p class="text-xs text-slate-500">
+                Ví dụ: Nếu link mời là <span class="text-indigo-600 font-bold">@locket_gold</span> thì bạn chỉ cần nhập <span class="text-indigo-600 font-bold">locket_gold</span>.
+              </p>
+              <p class="text-xs text-amber-700 font-medium flex items-center gap-1">
+                ⚠️ <span>Lưu ý: Dịch vụ chỉ kích hoạt thành công trên thiết bị <b>iPhone / iPad (iOS)</b>. Android chưa hỗ trợ.</span>
+              </p>
+            </div>
+          </div>
+
+          <!-- NÚT XÁC NHẬN -->
+          <button 
+            type="submit" 
+            id="btn-order-form-submit"
+            class="w-full bg-gradient-to-r from-blue-600 via-indigo-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white font-black py-4 px-6 rounded-xl shadow-lg shadow-indigo-500/25 transition duration-200 transform hover:scale-[1.01] flex items-center justify-center gap-2 text-base"
+          >
+            <span>✔</span> Xác Nhận Nạp Ngay (100.000đ)
+          </button>
+        </form>
+      </div>
+    </section>
+
+    <!-- Features Section: Đặc quyền SVIP (No DNS) -->
+    <section id="features" class="mb-20">
+      <div class="text-center mb-10">
+        <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-indigo-50 border border-indigo-100 text-indigo-700 font-bold text-xs mb-3">
+          <i class="fa-solid fa-crown"></i> SVIP NO DNS PREMIUM
+        </div>
+        <h2 class="text-3xl md:text-4xl font-black text-slate-900">
+          Đặc Quyền <span class="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-purple-600">SVIP (No DNS)</span>
+        </h2>
+        <p class="mt-2 text-slate-500 text-sm">Trọn bộ 12 đặc quyền cao cấp tích hợp trong gói nâng cấp Locket Gold 1 Năm</p>
+      </div>
+
+      <!-- 2-Column Grid Pastel Glass Cards -->
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-4 max-w-4xl mx-auto">
+        
+        <div class="flex items-center gap-3.5 p-4 rounded-2xl bg-white/80 backdrop-blur-sm border border-slate-100 shadow-sm hover:shadow-md transition-all">
+          <div class="w-8 h-8 rounded-xl bg-emerald-50 text-emerald-600 border border-emerald-200/60 flex items-center justify-center font-black text-sm flex-shrink-0">
+            <i class="fa-solid fa-check"></i>
+          </div>
+          <span class="font-bold text-slate-800 text-sm">Mở khóa 1 năm</span>
+        </div>
+
+        <div class="flex items-center gap-3.5 p-4 rounded-2xl bg-white/80 backdrop-blur-sm border border-slate-100 shadow-sm hover:shadow-md transition-all">
+          <div class="w-8 h-8 rounded-xl bg-emerald-50 text-emerald-600 border border-emerald-200/60 flex items-center justify-center font-black text-sm flex-shrink-0">
+            <i class="fa-solid fa-check"></i>
+          </div>
+          <span class="font-bold text-slate-800 text-sm">Không quảng cáo</span>
+        </div>
+
+        <div class="flex items-center gap-3.5 p-4 rounded-2xl bg-white/80 backdrop-blur-sm border border-slate-100 shadow-sm hover:shadow-md transition-all">
+          <div class="w-8 h-8 rounded-xl bg-emerald-50 text-emerald-600 border border-emerald-200/60 flex items-center justify-center font-black text-sm flex-shrink-0">
+            <i class="fa-solid fa-check"></i>
+          </div>
+          <span class="font-bold text-slate-800 text-sm">Upload ảnh trực tiếp từ thư viện</span>
+        </div>
+
+        <div class="flex items-center gap-3.5 p-4 rounded-2xl bg-white/80 backdrop-blur-sm border border-slate-100 shadow-sm hover:shadow-md transition-all">
+          <div class="w-8 h-8 rounded-xl bg-emerald-50 text-emerald-600 border border-emerald-200/60 flex items-center justify-center font-black text-sm flex-shrink-0">
+            <i class="fa-solid fa-check"></i>
+          </div>
+          <span class="font-bold text-slate-800 text-sm">Quay video 3s</span>
+        </div>
+
+        <div class="flex items-center gap-3.5 p-4 rounded-2xl bg-white/80 backdrop-blur-sm border border-slate-100 shadow-sm hover:shadow-md transition-all">
+          <div class="w-8 h-8 rounded-xl bg-emerald-50 text-emerald-600 border border-emerald-200/60 flex items-center justify-center font-black text-sm flex-shrink-0">
+            <i class="fa-solid fa-check"></i>
+          </div>
+          <span class="font-bold text-slate-800 text-sm">Xem chính xác người đã xem</span>
+        </div>
+
+        <div class="flex items-center gap-3.5 p-4 rounded-2xl bg-white/80 backdrop-blur-sm border border-slate-100 shadow-sm hover:shadow-md transition-all">
+          <div class="w-8 h-8 rounded-xl bg-emerald-50 text-emerald-600 border border-emerald-200/60 flex items-center justify-center font-black text-sm flex-shrink-0">
+            <i class="fa-solid fa-check"></i>
+          </div>
+          <span class="font-bold text-slate-800 text-sm">Thêm bạn bè không giới hạn</span>
+        </div>
+
+        <div class="flex items-center gap-3.5 p-4 rounded-2xl bg-white/80 backdrop-blur-sm border border-slate-100 shadow-sm hover:shadow-md transition-all">
+          <div class="w-8 h-8 rounded-xl bg-emerald-50 text-emerald-600 border border-emerald-200/60 flex items-center justify-center font-black text-sm flex-shrink-0">
+            <i class="fa-solid fa-check"></i>
+          </div>
+          <span class="font-bold text-slate-800 text-sm">Gửi phụ đề dài hơn</span>
+        </div>
+
+        <div class="flex items-center gap-3.5 p-4 rounded-2xl bg-white/80 backdrop-blur-sm border border-slate-100 shadow-sm hover:shadow-md transition-all">
+          <div class="w-8 h-8 rounded-xl bg-emerald-50 text-emerald-600 border border-emerald-200/60 flex items-center justify-center font-black text-sm flex-shrink-0">
+            <i class="fa-solid fa-check"></i>
+          </div>
+          <span class="font-bold text-slate-800 text-sm">Đổi theme/icon</span>
+        </div>
+
+        <div class="flex items-center gap-3.5 p-4 rounded-2xl bg-white/80 backdrop-blur-sm border border-slate-100 shadow-sm hover:shadow-md transition-all">
+          <div class="w-8 h-8 rounded-xl bg-emerald-50 text-emerald-600 border border-emerald-200/60 flex items-center justify-center font-black text-sm flex-shrink-0">
+            <i class="fa-solid fa-check"></i>
+          </div>
+          <span class="font-bold text-slate-800 text-sm">Tặng Canva Edu 3 năm</span>
+        </div>
+
+        <div class="flex items-center gap-3.5 p-4 rounded-2xl bg-white/80 backdrop-blur-sm border border-slate-100 shadow-sm hover:shadow-md transition-all">
+          <div class="w-8 h-8 rounded-xl bg-emerald-50 text-emerald-600 border border-emerald-200/60 flex items-center justify-center font-black text-sm flex-shrink-0">
+            <i class="fa-solid fa-check"></i>
+          </div>
+          <span class="font-bold text-slate-800 text-sm">Mở khóa web addlocket</span>
+        </div>
+
+        <div class="flex items-center gap-3.5 p-4 rounded-2xl bg-indigo-50/60 backdrop-blur-sm border border-indigo-100 shadow-sm hover:shadow-md transition-all">
+          <div class="w-8 h-8 rounded-xl bg-indigo-600 text-white flex items-center justify-center font-black text-sm flex-shrink-0">
+            <i class="fa-solid fa-shield-halved"></i>
+          </div>
+          <span class="font-black text-indigo-700 text-sm uppercase tracking-wider">KHÔNG DÙNG DNS</span>
+        </div>
+
+        <div class="flex items-center gap-3.5 p-4 rounded-2xl bg-white/80 backdrop-blur-sm border border-slate-100 shadow-sm hover:shadow-md transition-all">
+          <div class="w-8 h-8 rounded-xl bg-red-50 text-red-500 border border-red-200/60 flex items-center justify-center font-black text-sm flex-shrink-0">
+            <i class="fa-solid fa-xmark text-base"></i>
+          </div>
+          <span class="font-bold text-slate-400 text-sm line-through">Không có huy hiệu gold</span>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Pricing Details Section -->
+    <section id="pricing" class="mb-20">
+      <div class="text-center mb-10">
+        <h2 class="text-3xl md:text-4xl font-black text-slate-900">Bảng Giá Dịch Vụ <span class="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-purple-600">Locket Gold</span></h2>
+        <p class="mt-2 text-slate-500 text-sm">Giá tốt nhất thị trường - Bảo hành 100% trọn thời gian sử dụng</p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-5xl mx-auto" id="packages-container">
+        <!-- Loaded dynamically via app.js -->
+        <div class="bg-white/80 p-8 rounded-2xl border border-slate-100 text-center animate-pulse shadow-sm">
+          <div class="h-6 bg-slate-200 rounded w-1/2 mx-auto mb-4"></div>
+          <div class="h-10 bg-slate-200 rounded w-3/4 mx-auto mb-6"></div>
+          <div class="h-4 bg-slate-200 rounded w-full mb-2"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Guide Section -->
+    <section id="guide" class="mb-12">
+      <div class="text-center mb-10">
+        <h2 class="text-3xl md:text-4xl font-black text-slate-900">Quy Trình 3 Bước <span class="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-purple-600">Đơn Giản</span></h2>
+        <p class="mt-2 text-slate-500 text-sm">Hoàn tất nâng cấp chỉ trong 1-2 phút</p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-5xl mx-auto">
+        <div class="bg-white/80 backdrop-blur-sm border border-slate-100 p-6 rounded-2xl shadow-sm text-center">
+          <div class="w-12 h-12 rounded-xl bg-gradient-to-tr from-blue-600 to-purple-600 text-white text-xl font-black flex items-center justify-center mx-auto mb-4 shadow-md shadow-blue-500/20">
+            1
+          </div>
+          <h3 class="text-lg font-bold text-slate-900 mb-2">Đăng Ký & Nạp Ví</h3>
+          <p class="text-slate-500 text-xs leading-relaxed">Tạo tài khoản và nạp tiền tự động qua VietQR ngân hàng (Cú pháp: <code class="text-indigo-600 font-bold bg-slate-100 px-2 py-0.5 rounded">NAPTIEN ID</code>).</p>
+        </div>
+
+        <div class="bg-white/80 backdrop-blur-sm border border-slate-100 p-6 rounded-2xl shadow-sm text-center">
+          <div class="w-12 h-12 rounded-xl bg-gradient-to-tr from-blue-600 to-purple-600 text-white text-xl font-black flex items-center justify-center mx-auto mb-4 shadow-md shadow-blue-500/20">
+            2
+          </div>
+          <h3 class="text-lg font-bold text-slate-900 mb-2">Điền Username Locket</h3>
+          <p class="text-slate-500 text-xs leading-relaxed">Nhập chính xác Username ứng dụng Locket của bạn tại form đăng ký.</p>
+        </div>
+
+        <div class="bg-white/80 backdrop-blur-sm border border-slate-100 p-6 rounded-2xl shadow-sm text-center">
+          <div class="w-12 h-12 rounded-xl bg-gradient-to-tr from-blue-600 to-purple-600 text-white text-xl font-black flex items-center justify-center mx-auto mb-4 shadow-md shadow-blue-500/20">
+            3
+          </div>
+          <h3 class="text-lg font-bold text-slate-900 mb-2">Tận Hưởng Locket Gold</h3>
+          <p class="text-slate-500 text-xs leading-relaxed">Hệ thống xử lý duyệt tự động siêu tốc. Mở app Locket trải nghiệm tính năng ngay!</p>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="py-10 border-t border-slate-200/80 text-slate-500 bg-white/60 backdrop-blur-md">
+    <div class="max-w-6xl mx-auto px-4 text-center">
+      <div class="flex items-center justify-center gap-2 mb-2">
+        <i class="fa-solid fa-crown text-indigo-600"></i>
+        <span class="font-extrabold text-slate-900">LOCKETGOLD SYSTEM</span>
+      </div>
+      <p class="text-xs text-slate-500 mb-2">Hệ thống tự động nâng cấp Locket Gold 100% uy tín, bảo mật và an toàn.</p>
+      <p class="text-[11px] text-slate-400">&copy; 2026 LocketGold System. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <!-- App Main JavaScript Logic -->
+  <script src="/js/app.js"></script>
+
+  <script>
+    // Handle Quick Order Form submit (Gói 1 Năm 100.000đ - iOS)
+    async function handleOrderFormSubmit(e) {
+      e.preventDefault();
+      const token = getToken();
+
+      const usernameInput = document.getElementById('locket_username');
+      const targetUsername = usernameInput ? usernameInput.value.trim() : '';
+
+      if (!targetUsername) {
+        showToast('Vui lòng nhập Username Locket của bạn', 'warning');
+        return;
+      }
+
+      // Default package: Package ID 2 (Gói 1 Năm 100.000đ)
+      const packageId = 2;
+
+      // If user is not logged in, save pending order to sessionStorage and redirect to login
+      if (!token) {
+        sessionStorage.setItem('pending_order', JSON.stringify({
+          packageId: packageId,
+          targetUsername: targetUsername,
+        }));
+        showToast('Vui lòng đăng nhập để hoàn tất thanh toán đơn hàng 100.000đ!', 'info');
+        setTimeout(() => {
+          window.location.href = '/login.html';
+        }, 800);
+        return;
+      }
+
+      // If user is logged in, redirect to dashboard to complete order
+      sessionStorage.setItem('pending_order', JSON.stringify({
+        packageId: packageId,
+        targetUsername: targetUsername,
+      }));
+      window.location.href = '/dashboard.html';
+    }
+
+    document.addEventListener('DOMContentLoaded', () => {
+      fetchPackagesHome();
+    });
+  </script>
+</body>
+</html>

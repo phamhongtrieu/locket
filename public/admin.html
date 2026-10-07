@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Trang Quản Trị Admin - LocketGold System</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="/css/custom.css">
+</head>
+<body class="antialiased pb-20 bg-[#f8fafc] text-slate-800 relative font-sans">
+
+  <!-- Background Pastel Glow -->
+  <div class="fixed inset-0 pointer-events-none -z-10 overflow-hidden">
+    <div class="absolute -top-40 -left-40 w-96 h-96 bg-purple-200/40 rounded-full blur-3xl"></div>
+    <div class="absolute top-20 right-10 w-[500px] h-[500px] bg-blue-100/60 rounded-full blur-3xl"></div>
+  </div>
+
+  <!-- Admin Navigation -->
+  <nav class="sticky top-0 z-40 bg-white/80 backdrop-blur-md border-b border-slate-200/80 shadow-sm">
+    <div class="max-w-6xl mx-auto px-4">
+      <div class="flex items-center justify-between h-20">
+        <a href="/admin.html" class="flex items-center gap-3">
+          <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-blue-600 to-purple-600 text-white flex items-center justify-center shadow-md shadow-blue-500/20">
+            <i class="fa-solid fa-user-shield text-lg"></i>
+          </div>
+          <span class="font-black text-xl tracking-tight text-slate-900">
+            ADMIN<span class="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-purple-600">PANEL</span>
+          </span>
+        </a>
+
+        <div class="flex items-center gap-4">
+          <a href="/dashboard.html" class="px-4 py-2 rounded-xl bg-slate-100 hover:bg-slate-200 text-slate-700 font-bold text-sm transition-all border border-slate-200">
+            <i class="fa-solid fa-user mr-1"></i> Trang User
+          </a>
+          <button type="button" onclick="logout(event)" class="px-4 py-2 rounded-xl bg-red-50 text-red-600 hover:bg-red-100 font-bold text-sm transition-all border border-red-200/60">
+            <i class="fa-solid fa-right-from-bracket mr-1"></i> Đăng Xuất
+          </button>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Admin Dashboard Container -->
+  <main class="max-w-6xl mx-auto px-4 pt-8 space-y-8">
+
+    <!-- Top Stats Cards Grid -->
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+      
+      <div class="bg-white/80 backdrop-blur-md border border-white/90 p-6 rounded-2xl shadow-sm border-l-4 border-l-blue-600">
+        <div class="text-xs font-bold text-slate-400 uppercase tracking-wider mb-1">TỔNG DOANH THU</div>
+        <div class="text-2xl font-black text-blue-600" id="stat-total-revenue">0 VNĐ</div>
+        <div class="mt-2 text-xs text-slate-500">Doanh thu từ các đơn COMPLETED</div>
+      </div>
+
+      <div class="bg-white/80 backdrop-blur-md border border-white/90 p-6 rounded-2xl shadow-sm border-l-4 border-l-emerald-600">
+        <div class="text-xs font-bold text-slate-400 uppercase tracking-wider mb-1">DOANH THU HÔM NAY</div>
+        <div class="text-2xl font-black text-emerald-600" id="stat-today-revenue">0 VNĐ</div>
+        <div class="mt-2 text-xs text-slate-500">Từ 00:00 hôm nay</div>
+      </div>
+
+      <div class="bg-white/80 backdrop-blur-md border border-white/90 p-6 rounded-2xl shadow-sm border-l-4 border-l-indigo-600">
+        <div class="text-xs font-bold text-slate-400 uppercase tracking-wider mb-1">ĐƠN CHỜ XỬ LÝ (PENDING)</div>
+        <div class="text-2xl font-black text-indigo-600" id="stat-pending-orders">0</div>
+        <div class="mt-2 text-xs text-slate-500">Cần kích hoạt / Telegram Bot</div>
+      </div>
+
+      <div class="bg-white/80 backdrop-blur-md border border-white/90 p-6 rounded-2xl shadow-sm border-l-4 border-l-purple-600">
+        <div class="text-xs font-bold text-slate-400 uppercase tracking-wider mb-1">TỔNG TÀI KHOẢN / SỐ DƯ VÍ</div>
+        <div class="text-2xl font-black text-purple-600" id="stat-total-users">0 Người</div>
+        <div class="mt-2 text-xs text-slate-500 font-semibold" id="stat-user-balances">Ví: 0 VNĐ</div>
+      </div>
+
+    </div>
+
+    <!-- Orders Management Section -->
+    <div class="bg-white/80 backdrop-blur-md border border-white/90 p-6 md:p-8 rounded-2xl shadow-sm">
+      
+      <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-6">
+        <div>
+          <h2 class="text-xl font-black text-slate-900 flex items-center gap-2">
+            <i class="fa-solid fa-list-check text-indigo-600"></i> Quản Lý Đơn Hàng Nâng Cấp Locket
+          </h2>
+          <p class="text-xs text-slate-500 mt-1">Copy nhanh Username Locket để dán vào Bot Telegram hoặc xử lý thủ công</p>
+        </div>
+
+        <!-- Filter status tabs -->
+        <div class="flex items-center gap-2 bg-slate-100 p-1.5 rounded-xl border border-slate-200">
+          <button onclick="filterOrders('ALL')" id="filter-btn-ALL" class="filter-btn px-3 py-1.5 rounded-lg text-xs font-bold transition-all bg-indigo-600 text-white shadow-sm">
+            Tất Cả
+          </button>
+          <button onclick="filterOrders('PENDING')" id="filter-btn-PENDING" class="filter-btn px-3 py-1.5 rounded-lg text-xs font-bold transition-all text-slate-600 hover:text-slate-900">
+            Chờ Xử Lý (PENDING)
+          </button>
+          <button onclick="filterOrders('COMPLETED')" id="filter-btn-COMPLETED" class="filter-btn px-3 py-1.5 rounded-lg text-xs font-bold transition-all text-slate-600 hover:text-slate-900">
+            Thành Công
+          </button>
+          <button onclick="filterOrders('FAILED')" id="filter-btn-FAILED" class="filter-btn px-3 py-1.5 rounded-lg text-xs font-bold transition-all text-slate-600 hover:text-slate-900">
+            Thất Bại / Hoàn Tiền
+          </button>
+        </div>
+      </div>
+
+      <!-- Orders List Table -->
+      <div class="overflow-x-auto">
+        <table class="w-full text-left border-collapse">
+          <thead>
+            <tr class="border-b border-slate-200 text-xs font-bold text-slate-400 uppercase tracking-wider">
+              <th class="py-3.5 px-4">Mã Đơn</th>
+              <th class="py-3.5 px-4">Khách Hàng (Email)</th>
+              <th class="py-3.5 px-4">Username Locket</th>
+              <th class="py-3.5 px-4">Gói Dịch Vụ</th>
+              <th class="py-3.5 px-4">Giá Tiền</th>
+              <th class="py-3.5 px-4">Trạng Thái</th>
+              <th class="py-3.5 px-4 text-center">Thao Tác Admin</th>
+            </tr>
+          </thead>
+          <tbody id="admin-orders-table-body" class="divide-y divide-slate-100 text-sm">
+            <tr>
+              <td colspan="7" class="py-6 text-center text-slate-400">Đang tải danh sách đơn hàng...</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+    </div>
+
+    <!-- Khung Admin Nạp Tiền Thủ Công Cho Khách -->
+    <div class="bg-white/80 backdrop-blur-md border border-slate-200 rounded-2xl p-6 shadow-sm">
+      <h3 class="text-lg font-bold text-slate-800 mb-4 flex items-center gap-2">
+        💳 Nạp / Cộng Tiền Thủ Công Cho Khách
+      </h3>
+      
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+        <input 
+          type="text" 
+          id="manual_email" 
+          placeholder="Email / User ID của khách (VD: user@gmail.com hoặc #1)" 
+          class="border border-slate-300 rounded-xl px-4 py-2.5 text-sm focus:outline-none focus:border-indigo-500 font-medium text-slate-900"
+        >
+        <input 
+          type="number" 
+          id="manual_amount" 
+          placeholder="Số tiền cần cộng (VD: 100000)" 
+          class="border border-slate-300 rounded-xl px-4 py-2.5 text-sm focus:outline-none focus:border-indigo-500 font-bold text-slate-900"
+        >
+        <button 
+          onclick="addManualBalance()" 
+          class="bg-indigo-600 hover:bg-indigo-700 text-white font-bold py-2.5 px-4 rounded-xl text-sm transition shadow-md shadow-indigo-500/20"
+        >
+          ➕ Xác Nhận Cộng Tiền
+        </button>
+      </div>
+    </div>
+
+    <!-- Quản Lý Danh Sách Thành Viên (Users List) -->
+    <div class="bg-white/80 backdrop-blur-md border border-slate-200 rounded-2xl p-6 md:p-8 shadow-sm">
+      <div class="flex items-center justify-between mb-6">
+        <div>
+          <h3 class="text-lg font-bold text-slate-900 flex items-center gap-2">
+            <i class="fa-solid fa-users text-indigo-600"></i> Quản Lý Danh Sách Thành Viên
+          </h3>
+          <p class="text-xs text-slate-500 mt-1">Danh sách người dùng đăng ký trên hệ thống và số dư hiện tại</p>
+        </div>
+        <button onclick="fetchAdminUsers()" class="px-3 py-1.5 rounded-lg bg-slate-100 hover:bg-slate-200 text-xs font-bold text-slate-700 transition-colors border border-slate-200">
+          <i class="fa-solid fa-arrows-rotate mr-1"></i> Làm Mới
+        </button>
+      </div>
+
+      <div class="overflow-x-auto">
+        <table class="w-full text-left border-collapse">
+          <thead>
+            <tr class="border-b border-slate-200 text-xs font-bold text-slate-400 uppercase tracking-wider">
+              <th class="py-3.5 px-4">User ID</th>
+              <th class="py-3.5 px-4">Địa Chỉ Email</th>
+              <th class="py-3.5 px-4">Số Dư Ví</th>
+              <th class="py-3.5 px-4">Quyền Hạn</th>
+              <th class="py-3.5 px-4">Ngày Đăng Ký</th>
+              <th class="py-3.5 px-4 text-center">Nạp Nhanh</th>
+            </tr>
+          </thead>
+          <tbody id="admin-users-table-body" class="divide-y divide-slate-100 text-sm">
+            <tr>
+              <td colspan="6" class="py-6 text-center text-slate-400">Đang tải danh sách thành viên...</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+  </main>
+
+  <script src="/js/app.js"></script>
+  <script src="/js/admin.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      initAdminDashboard();
+    });
+  </script>
+</body>
+</html>
